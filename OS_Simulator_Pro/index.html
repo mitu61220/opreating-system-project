@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive Operating Systems algorithm simulator">
+<title>OS Nexus — Operating Systems Simulator</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><span>OS</span></div>
+      <div><strong>OS Nexus</strong><small>Operating Systems Lab</small></div>
+    </div>
+    <div class="nav-label">WORKSPACE</div>
+    <nav class="nav">
+      <a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span><span>Dashboard</span></a>
+      <a class="nav-link" href="pages/cpu.html"><span class="nav-icon">CPU</span><span>CPU Scheduling</span></a>
+      <a class="nav-link" href="pages/memory.html"><span class="nav-icon">RAM</span><span>Page Replacement</span></a>
+      <a class="nav-link" href="pages/disk.html"><span class="nav-icon">DSK</span><span>Disk Scheduling</span></a>
+      <a class="nav-link" href="pages/deadlock.html"><span class="nav-icon">LK</span><span>Deadlock</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="mini-status"><span class="pulse"></span><div><b>Simulator online</b><small>All modules ready</small></div></div>
+      <div class="side-note">v2.0 • Browser based<br>Built for learning & visualization</div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="crumb"><span>OS NEXUS</span><b>/</b> Dashboard</div>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" title="Toggle theme">☼</button>
+        <span class="online"><i></i> System Ready</span>
+      </div>
+    </header>
+
+    <section class="hero hero-dashboard">
+      <div class="hero-copy">
+        <div class="badge"><span class="spark">✦</span> INTERACTIVE OPERATING SYSTEMS LAB</div>
+        <h1>See the algorithm.<br><span>Understand the system.</span></h1>
+        <p>Explore CPU scheduling, memory management, disk scheduling and deadlock avoidance through live simulations and visual explanations.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="pages/cpu.html">Launch Simulator <span>→</span></a>
+          <a class="btn btn-ghost" href="#modules">Explore Modules</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-grid"></div>
+        <div class="core-orb"><span>OS</span><small>NEXUS</small></div>
+        <div class="ring ring-a"></div><div class="ring ring-b"></div><div class="orbit-dot dot-a"></div><div class="orbit-dot dot-b"></div>
+      </div>
+    </section>
+
+    <section class="quick-stats">
+      <div class="stat-card"><span class="stat-icon blue">◈</span><div><b>04</b><small>Core Modules</small></div></div>
+      <div class="stat-card"><span class="stat-icon purple">⌁</span><div><b>12+</b><small>Algorithms & Methods</small></div></div>
+      <div class="stat-card"><span class="stat-icon cyan">⚡</span><div><b>100%</b><small>Client Side</small></div></div>
+      <div class="stat-card"><span class="stat-icon orange">↗</span><div><b>0 ms</b><small>Server Dependency</small></div></div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="section-heading"><div><div class="eyebrow">SIMULATION SUITE</div><h2>Choose your lab</h2></div><span class="section-hint">Interactive • Visual • Instant</span></div>
+      <div class="module-grid">
+        <a class="module-card accent-blue" href="pages/cpu.html">
+          <div class="module-top"><span class="module-icon">CPU</span><span class="arrow">↗</span></div>
+          <div><h3>CPU Scheduling</h3><p>Compare FCFS, SJF, Priority and Round Robin with live Gantt charts and performance metrics.</p></div>
+          <div class="module-footer"><span>4 algorithms</span><b>Open lab →</b></div>
+        </a>
+        <a class="module-card accent-purple" href="pages/memory.html">
+          <div class="module-top"><span class="module-icon">RAM</span><span class="arrow">↗</span></div>
+          <div><h3>Page Replacement</h3><p>Watch FIFO, LRU and Optimal algorithms transform reference strings frame by frame.</p></div>
+          <div class="module-footer"><span>3 algorithms</span><b>Open lab →</b></div>
+        </a>
+        <a class="module-card accent-cyan" href="pages/disk.html">
+          <div class="module-top"><span class="module-icon">DSK</span><span class="arrow">↗</span></div>
+          <div><h3>Disk Scheduling</h3><p>Visualize request order and measure total head movement with classic disk strategies.</p></div>
+          <div class="module-footer"><span>4 algorithms</span><b>Open lab →</b></div>
+        </a>
+        <a class="module-card accent-orange" href="pages/deadlock.html">
+          <div class="module-top"><span class="module-icon">LK</span><span class="arrow">↗</span></div>
+          <div><h3>Deadlock Avoidance</h3><p>Use Banker's Algorithm to calculate Need, test safety and generate a safe sequence.</p></div>
+          <div class="module-footer"><span>Banker's algorithm</span><b>Open lab →</b></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="info-panel">
+        <div class="eyebrow">HOW IT WORKS</div><h2>From input to insight</h2>
+        <div class="steps">
+          <div class="step"><span>01</span><div><b>Configure</b><small>Enter processes, references, requests or resources.</small></div></div>
+          <div class="step"><span>02</span><div><b>Simulate</b><small>Run the selected OS algorithm instantly in your browser.</small></div></div>
+          <div class="step"><span>03</span><div><b>Analyze</b><small>Read charts, tables, metrics and the algorithm result.</small></div></div>
+        </div>
+      </div>
+      <div class="info-panel highlight-panel">
+        <span class="big-symbol">⌘</span><div><div class="eyebrow">PROJECT NOTE</div><h3>Built for OS coursework</h3><p>No backend, no installation, no external API. Open the HTML files or run with Live Server and start experimenting.</p></div>
+      </div>
+    </section>
+
+    <footer class="footer">OS Nexus • Interactive Operating Systems Simulator <span>•</span> Designed for learning, demos & GitHub portfolios</footer>
+  </main>
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

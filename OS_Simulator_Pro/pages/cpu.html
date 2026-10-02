@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="OS Nexus interactive Operating Systems simulator"><title>CPU Scheduling | OS Nexus</title><link rel="stylesheet" href="../assets/css/style.css"></head><body>
+<div class="app-shell"><div class="mobile-overlay" id="mobileOverlay"></div><aside class="sidebar" id="sidebar">
+<div class="brand"><div class="brand-mark"><span>OS</span></div><div><strong>OS Nexus</strong><small>Operating Systems Lab</small></div></div>
+<div class="nav-label">WORKSPACE</div><nav class="nav"><a class="nav-link " href="../index.html"><span class="nav-icon">⌂</span><span>Dashboard</span></a><a class="nav-link active" href="cpu.html"><span class="nav-icon">CPU</span><span>CPU Scheduling</span></a><a class="nav-link " href="memory.html"><span class="nav-icon">RAM</span><span>Page Replacement</span></a><a class="nav-link " href="disk.html"><span class="nav-icon">DSK</span><span>Disk Scheduling</span></a><a class="nav-link " href="deadlock.html"><span class="nav-icon">LK</span><span>Deadlock</span></a></nav>
+<div class="sidebar-bottom"><div class="mini-status"><span class="pulse"></span><div><b>Simulator online</b><small>All modules ready</small></div></div><div class="side-note">v2.0 • Browser based<br>Built for learning & visualization</div></div>
+</aside><main class="main-content"><header class="topbar"><button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open menu">☰</button><div class="crumb"><span>OS NEXUS</span><b>/</b> CPU Scheduling</div><div class="top-actions"><button class="icon-btn" id="themeBtn" title="Toggle theme">☼</button><span class="online"><i></i> Simulator Ready</span></div></header>
+<section class="page">
+<div class="page-heading"><div><div class="eyebrow">CPU MANAGEMENT</div><h1>CPU Scheduling</h1><p>Compare scheduling policies and inspect execution order, waiting time and turnaround time.</p></div><div class="page-badge">● LIVE SIMULATION</div></div>
+<div class="panel control-panel">
+<div class="panel-head"><div><span class="eyebrow">STEP 01</span><h3>Configure scheduler</h3></div><div class="head-actions"><button class="btn btn-soft" id="demoBtn">↻ Load Demo</button><button class="btn btn-soft" id="clearBtn">Clear</button></div></div>
+<div class="algo-tabs" id="cpuTabs"><button class="active" data-algo="FCFS">FCFS</button><button data-algo="SJF">SJF <small>Non-Preemptive</small></button><button data-algo="Priority">Priority</button><button data-algo="RR">Round Robin</button></div>
+<div class="input-grid cpu-inputs"><label class="field wide"><span>PROCESS DATA <small>PID, Arrival Time, Burst Time, Priority</small></span><textarea id="procInput" spellcheck="false">P1,0,7,2
+P2,1,4,1
+P3,2,5,3
+P4,3,2,2</textarea></label><label class="field" id="quantBox" hidden><span>TIME QUANTUM</span><input id="quantum" type="number" value="2" min="1"></label></div>
+<div class="action-row"><span class="hint">Tip: use one process per line. Priority 1 = higher priority.</span><button class="btn btn-primary" id="runCpu">Run Simulation <span>→</span></button></div>
+</div>
+<div class="panel">
+<div class="panel-head"><div><span class="eyebrow">STEP 02</span><h3>Execution timeline</h3></div><span class="result-pill" id="algoLabel">FCFS</span></div>
+<div id="gantt" class="gantt empty-state">Run the simulation to generate the Gantt chart.</div>
+<div class="timeline-scale" id="timelineScale"></div>
+</div>
+<div class="metric-grid four">
+<div class="metric-card"><span>Average Waiting</span><b id="avgWait">—</b><small>time units</small></div>
+<div class="metric-card"><span>Average Turnaround</span><b id="avgTat">—</b><small>time units</small></div>
+<div class="metric-card"><span>CPU Utilization</span><b id="util">—</b><small>active time / total time</small></div>
+<div class="metric-card"><span>Completion Time</span><b id="total">—</b><small>last process finishes</small></div>
+</div>
+<div class="panel"><div class="panel-head"><div><span class="eyebrow">STEP 03</span><h3>Process analytics</h3></div><button class="btn btn-soft" id="exportCpu">Export JSON</button></div>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>PID</th><th>Arrival</th><th>Burst</th><th>Priority</th><th>Completion</th><th>Waiting</th><th>Turnaround</th></tr></thead><tbody id="cpuTable"><tr><td colspan="7" class="empty-cell">No results yet.</td></tr></tbody></table></div></div>
+<div class="algorithm-note"><div class="note-icon">i</div><div><b>What to observe</b><p>FCFS follows arrival order; SJF chooses the shortest available job; Priority chooses the smallest priority number; Round Robin shares CPU time using a fixed quantum.</p></div></div>
+</section>
+<footer class="footer">OS Nexus • Interactive Operating Systems Simulator <span>•</span> <a href="../index.html">Back to dashboard</a></footer>
+</main></div><script src="../assets/js/app.js"></script><script src="../assets/js/cpu.js"></script></body></html>
